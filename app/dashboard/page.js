@@ -1,22 +1,25 @@
-import React from 'react'
-import DBsidebar from '@/components/dashboard/DBSideBar' 
-import NvBar from '@/components/dashboard/NavBar'
-import MainSection from '@/components/dashboard/MainSection'
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import Sidebar from "@/components/dashboard/DBSideBar";
+import NavBar from "@/components/dashboard/NavBar";
+import MainUperPart from "@/components/dashboard/MainUperPart";
+import gsap from "gsap";
 
-
-const page = () => {
+const Dashboard = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const name = "Elkovi's Restraunt"
   return (
-    <div className="flex bg-backColor h-screen w-screen overflow-auto">
-{/* SideBar Adjustments      */}
-      <DBsidebar/>
+    <>
+      <div className="flex bg-backColor h-screen w-screen overflow-hidden">
+        {sidebarOpen && <Sidebar className="" state={sidebarOpen} />}
+        <div className="flex flex-col flex-grow">
+          <NavBar page={"Dashboard"} callback={setSidebarOpen} />
+          <div className="px-10 text-white text-4xl font-bold mt-4">{name}</div>
+          <MainUperPart className="p-10" />
+        </div>
+      </div>
+    </>
+  );
+};
 
-    <div className="flex flex-col">
-      <NvBar/>
-      <MainSection/>
-    </div>
-      
-    </div>
-  )
-}
-
-export default page
+export default Dashboard;

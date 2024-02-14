@@ -1,12 +1,19 @@
-import NavBar from '@/components/dashboard/NavBar'
-import React from 'react'
+"use client"
+import Sidebar from '@/components/dashboard/DBSideBar'
+import React, { Component } from 'react'
+import HNavBar from '@/components/home/HNavBar'
+import Hcenter from '@/components/home/Hcenter'
 
-function page() {
-  return (
-    <div className='bg-backColor w-screen h-screen'>
-        <NavBar/>
-    </div>
-  )
+export default class page extends Component {
+  render() {
+    return (
+      <div className='flex h-screen w-full bg-backColor overflow-auto'>
+        <Sidebar/>
+        <div>
+            <HNavBar/>
+            <Hcenter/>
+        </div>
+      </div>
+    )
+  }
 }
-
-export default page
