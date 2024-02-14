@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input{
+  @apply border-[2px] border-iconcol rounded-lg 
+}
+.input_focus{
+  @apply bg-sideBarcol p-1 px-2  w-full border-none outline-none
+}
