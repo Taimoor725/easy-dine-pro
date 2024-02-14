@@ -12,15 +12,15 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@react-three/drei": "^9.93.1",
-    "@react-three/fiber": "^8.15.14",
+    "@react-three/drei": "^9.97.5",
+    "@react-three/fiber": "^8.15.16",
     "@react-three/rapier": "^1.2.1",
     "firebase": "^10.8.0",
     "gsap": "^3.12.5",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "three": "^0.160.0"
+    "three": "^0.160.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
