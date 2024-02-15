@@ -1,5 +1,5 @@
 "use client"
-import Sidebar from '@/components/dashboard/DBSideBar'
+import Sidebar from '@/components/dashboard/SideBar'
 import React, { Component } from 'react'
 import HNavBar from '@/components/home/HNavBar'
 import Hcenter from '@/components/home/Hcenter'

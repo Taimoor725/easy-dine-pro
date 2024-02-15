@@ -39,7 +39,7 @@ const Card = ({ icon, title, amount, growth }) => {
         <div className="text-sm text-gray-300 font-semibold capitalize">{title}</div>
         <div className="flex items-end gap-2">
           <div className="text-white font-bold text-xl">{amount}</div>
-          <div className={`text-[${growth > 0 ? "green" : "red"}] text-sm font-bold`}>
+          <div className={`${growth > 0 ? "text-[green]":"text-[red]"} text-sm font-bold`}>
             {growth > 0 ? "+" : ""}
             {growth}%
           </div>

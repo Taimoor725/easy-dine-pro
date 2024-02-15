@@ -1,6 +1,6 @@
 import React from 'react'
 import MainSection from '@/components/editproduct/MainSection'
-import Sidebar from '@/components/dashboard/DBSideBar'
+import Sidebar from '@/components/dashboard/SideBar'
 import NavBar from '@/components/editproduct/NavBar'
 
 const page =() => {

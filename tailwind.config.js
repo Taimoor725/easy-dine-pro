@@ -15,7 +15,9 @@ module.exports = {
         green: '#04B816',
         btncol: '#0075ff',
         iconcol: '#718096',
-        brAqua: '#0BCDB8'
+        brgray:'#1A1F37',
+        brAqua: '#0BCDB8',
+        brBlue: '#0075FF',
       },
     },
   },

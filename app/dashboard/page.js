@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Sidebar from "@/components/dashboard/DBSideBar";
+import Sidebar from "@/components/dashboard/SideBar";
 import NavBar from "@/components/dashboard/NavBar";
 import MainUperPart from "@/components/dashboard/MainUperPart";
 import gsap from "gsap";
@@ -10,7 +10,7 @@ const Dashboard = () => {
   const name = "Elkovi's Restraunt"
   return (
     <>
-      <div className="flex bg-backColor h-screen w-screen overflow-hidden">
+      <div className="flex bg-backColor h-screen w-screen  overflow-x-hidden">
         {sidebarOpen && <Sidebar className="" state={sidebarOpen} />}
         <div className="flex flex-col flex-grow">
           <NavBar page={"Dashboard"} callback={setSidebarOpen} />
