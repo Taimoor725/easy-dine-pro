@@ -19,7 +19,7 @@ function LoginSideBar() {
 
         <div className='flex w-full h-full items-end gap-2 pb-[1.5rem]'>
           <div className='text-xs'>Powered by </div>
-          <Image src="/SMATIK_logo.png" width={60} height={30}/>
+          <Image src="/smatik_logo.png" width={60} height={30}/>
         </div>
     </div>
 
