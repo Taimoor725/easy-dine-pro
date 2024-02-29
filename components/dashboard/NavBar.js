@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import React from "react";
 
-function NavBar({ page, callback, ...props }) {
+function NavBar({ page }) {
   return (
     <div className="w-full flex px-10 py-4 text-white items-center justify-between">
       <div className="flex items-center justify-center gap-4">
@@ -11,7 +11,7 @@ function NavBar({ page, callback, ...props }) {
           <div className="text-gray-500">Pages&nbsp;</div>
           <div className="font-bold">/&nbsp;{page}</div>
         </div>
-        <button onClick={() => callback((e) => !e)}>
+        <button>
           <FontAwesomeIcon icon={faBars} />
         </button>
       </div>

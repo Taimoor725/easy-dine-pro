@@ -12,18 +12,18 @@ function MainUperPart(props) {
     { title: "Net profit", amount: "$4000", growth: "5", icon: faShoppingCart },
   ];
   return (
-    <div className="w-full h-full" {...props}>
+    <div className="w-[84%] h-full " {...props}>
       <div className="flex w-full h-full gap-2">
         <div className="w-3/5 h-full flex flex-col gap-4">
-          <div className="grid grid-cols-2 grid-rows-2 h-1/3 gap-4">
+          <div className="grid grid-cols-2 grid-rows-2 h-1/4 gap-4">
             {data.map((value, i) => {
               return <Card {...value} />;
             })}
           </div>
           <TimelineCard />
         </div>
-        <div className="w-2/5 h-full">
-          <Earth />
+        <div className="w-2/5 h-full bg-black">
+          {/* <Earth/> */}
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@ export default MainUperPart;
 
 const Card = ({ icon, title, amount, growth }) => {
   return (
-    <div className="w-full h-full bg-sideBarcol rounded-2xl flex p-4 hover:bg-backColor hover:border-4 border-sideBarcol ">
+    <div className="w-full h-full bg-sideBarcol rounded-2xl flex p-4 border-sideBarcol border-[1px] hover:bg-backColor hover:border-white ">
       <div className=" flex-grow flex flex-col items-start justify-center gap-1">
         <div className="text-sm text-gray-300 font-semibold capitalize">{title}</div>
         <div className="flex items-end gap-2">
@@ -45,7 +45,7 @@ const Card = ({ icon, title, amount, growth }) => {
           </div>
         </div>
       </div>
-      <div className="text-white flex items-center justify-center bg-btncol p-4 rounded-xl text-xl">
+      <div className="text-white flex items-center justify-center bg-btncol p-3 rounded-xl text-xl">
         <FontAwesomeIcon icon={icon} />
       </div>
     </div>
