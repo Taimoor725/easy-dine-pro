@@ -4,6 +4,7 @@ import React, { useState ,useEffect} from 'react'
 import { sendEmailVerification , createUserWithEmailAndPassword} from "firebase/auth";
 import { auth } from '@/firebase.config';
 import { redirect, useRouter } from "next/navigation";
+import LoginSideBar from "@/components/LoginSideBar";
 
 
 function page() {
@@ -23,8 +24,8 @@ function page() {
     };
     
     return (
-        <div className='flex h-full w-screen font-italic bg-backColor text-white overflow-auto'>
-            <SideBar />
+        <div className='flex h-screen w-screen font-italic bg-backColor text-white overflow-hidden'>
+            <LoginSideBar/>
             <div className='flex flex-col justify-center gap-[1.4rem] pl-[5rem]'>
                 <p className='font-bold text-2xl '>Lassen Sie uns anfangen</p>
                 <div className='flex flex-col gap-4'>
@@ -78,7 +79,7 @@ function page() {
                     <p className='w-[35rem] font-light text-[11px]'>Mit dem Absenden dieses Formulars akzeptieren Sie unsere AGB und nehmen unsere Datenschutzerklärung zur Kenntnis</p>
 
 
-                    <button className='w-[13rem] h-[2rem] bg-brLightGreen rounded-[9px] flex text-black justify-center items-center' onClick={Sigin}>Weiter</button>
+                    <button className='w-[13rem] h-[2rem] bg-[#08CFB8] rounded-[9px] flex text-black justify-center items-center' onClick={Sigin}>Weiter</button>
                     <div>
                         <div className='flex w-[13rem] justify-center text-[0.7rem]'>Haben Sie bereits ein Benutzerkonto?</div>
                         <button className='w-[13rem] flex justify-center font-semibold underline' onClick={()=>router.push("/login/")}>Anmelden</button>

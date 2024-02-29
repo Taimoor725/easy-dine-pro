@@ -2,11 +2,11 @@
 import React from 'react'
 import Image from 'next/image'
 
-function SideBar() {
+function LoginSideBar() {
   return (
-    <div className='flex flex-col w-[37%] h-full bg-[#0E448F] gap-[3.5rem] pt-[4rem] pl-[3rem] text-white'>
+    <div className='flex flex-col w-[37%] h-full bg-sideBarcol gap-[3.5rem] pt-[4rem] pl-[3rem] text-white'>
         <div className='flex flex-col gap-2'>
-          <div className='w-full '><img src="/logo.png" alt="logo"className='w-[5rem]'/></div>
+          <div className='w-full '><img src="/png/pic_1.png" alt="logo"className='w-[5rem]'/></div>
           <div className='w-[65%] h-[3rem]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, mollitia.</div>
         </div>
 {/* add content in this div */}
@@ -26,7 +26,7 @@ function SideBar() {
   )
 }
 
-export default SideBar
+export default LoginSideBar
 
 
 

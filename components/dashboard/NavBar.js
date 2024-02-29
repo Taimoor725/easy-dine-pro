@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import { faBars, faBell, faGear, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -37,17 +36,4 @@ function NavBar({ page }) {
 }
 
 export default NavBar;
-=======
-import React from 'react'
 
-function NavBar(props) {
-  return (
-    <div className='w-screen h-auto bg-[red] flex'>
-        <div>pages</div>
-        <div>{props.page}</div>
-    </div>
-  )
-}
-
-export default NavBar
->>>>>>> Stashed changes
