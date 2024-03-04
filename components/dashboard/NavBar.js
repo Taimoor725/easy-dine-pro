@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import React from "react";
 
-function NavBar({ page }) {
+function NavBar({ page,subpage }) {
   return (
-    <div className="w-full flex px-10 py-4 text-white items-center justify-between">
+    <div className="z-10">
+    <div className="w-full flex px-10 pt-4 text-white items-center justify-between">
       <div className="flex items-center justify-center gap-4">
         <div className="flex">
           <div className="text-gray-500">Pages&nbsp;</div>
@@ -15,7 +16,7 @@ function NavBar({ page }) {
           <FontAwesomeIcon icon={faBars} />
         </button>
       </div>
-      <div className="flex items-center justify-center gap-6 text-gray-500">
+      <div className="flex flex-grow-1 items-center justify-center gap-6 text-gray-500">
         <div className="flex items-center justify-end gap-2 ">
           <Image src={"/png/flag.png"}  height={42} width={42} className="border-gray-500 border rounded-xl  p-3 object-cover"/>
           <form className="w-3/5 flex text-sm border border-gray-500 rounded-xl px-4  justify-center items-center gap-4 placeholder:text-gray-500">
@@ -31,6 +32,8 @@ function NavBar({ page }) {
         <FontAwesomeIcon icon={faBell} />
         <FontAwesomeIcon icon={faGear} />
       </div>
+    </div>
+    <div className="flex pl-10 font-bold text-xl text-white">{subpage}</div>
     </div>
   );
 }

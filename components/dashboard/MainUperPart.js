@@ -2,6 +2,7 @@
 import React from 'react';
 import { faBell, faFile, faGlobe, faShoppingCart, faWallet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import GlobeViz from './GlobeViz';
 
 
 function MainUperPart(props) {
@@ -12,18 +13,19 @@ function MainUperPart(props) {
     { title: "Net profit", amount: "$4000", growth: "5", icon: faShoppingCart },
   ];
   return (
-    <div className="w-[84%] h-full " {...props}>
-      <div className="flex w-full h-full gap-2">
-        <div className="w-3/5 h-full flex flex-col gap-4">
-          <div className="grid grid-cols-2 grid-rows-2 h-1/4 gap-4">
+    <div className="w-[84%] h-full overflow-x-hidden" {...props}>
+      <div className="flex w-full h-full gap-2 ">
+        <div className="w-4/5 h-full flex flex-col gap-4 relative z-10">
+          <div className="grid grid-cols-2  grid-rows-2 h-1/4 gap-4">
             {data.map((value, i) => {
-              return <Card {...value} key={i} />;
+              return <Card {...value} key={i}  />;
             })}
           </div>
           <TimelineCard />
+         
         </div>
-        <div className="w-2/5 h-full bg-black">
-          {/* <Earth/> */}
+        <div className="w-2/5 h-full">
+        <div className='absolute inset-0 z-0'><GlobeViz/></div>
         </div>
       </div>
     </div>
@@ -66,7 +68,8 @@ const TimelineCard = () => {
     },
   ];
   return (
-    <div className="w-2/3 h-2/3  ">
+    <div className='flex gap-4'>
+    <div className="w-[58%] h-full">
       <div className="bg-sideBarcol w-full h-full rounded-2xl p-4 flex flex-col gap-4">
         <div className="font-bold text-white text-xl ml-2">Timeline with dotted line</div>
         <div className="flex flex-col gap-4">
@@ -75,6 +78,16 @@ const TimelineCard = () => {
           })}
         </div>
       </div>
+    </div>
+    <div className='text-white flex flex-col w-[38%] flex-grow  bg-sideBarcol p-4 justify-center items-center rounded-xl gap-7'>
+          <img src="png/dashboard_1.png" className='object-cover rounded-[2rem]'/>
+          <div>
+            <p>Alles Restaurants</p>
+            <p>EasyDine Club</p>
+          </div>
+
+          <div className='w-3/4 bg-[#0075FF] rounded-lg p-2 text-bold flex justify-center items-center'>Wählen</div>
+    </div>
     </div>
   );
 };
