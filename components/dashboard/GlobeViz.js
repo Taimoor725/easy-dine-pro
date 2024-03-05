@@ -16,7 +16,7 @@ const GlobeViz = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('//unpkg.com/world-atlas/land-110m.json');
+        const response = await fetch('https://unpkg.com/world-atlas/land-110m.json');
         const landTopo = await response.json();
 
         world

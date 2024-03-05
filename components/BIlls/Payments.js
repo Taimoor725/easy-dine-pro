@@ -1,6 +1,6 @@
 "use client";
 import { faCross, faFile, faXmark } from '@fortawesome/free-solid-svg-icons';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import {Tooltip, Button} from "@nextui-org/react";
@@ -12,6 +12,10 @@ const Payments = ({ data ,...props}) => {
 const [invoice, invoiceOpen] = useState(false);
   
   return (
+
+    useEffect(()=>{
+
+    
     <div className='h-screen flex flex-col bg-sideBarcol rounded-xl z-0'>
       <p className='text-white text-2xl font-bold p-4'>Rechnungen</p>
       <div className='flex flex-col gap-1'>
@@ -73,8 +77,10 @@ const [invoice, invoiceOpen] = useState(false);
       ))}
       </div>
     </div>
+    })
   );
 };
+
 
 const data = [
   { pic: "/PaymentPage/customer_1.png", tabelNo: "2", paymentMethod: "Master Card", status: "Bezahlt" ,cardNo:"12231xxx",date:"14.06.23  / 14:32 " },
