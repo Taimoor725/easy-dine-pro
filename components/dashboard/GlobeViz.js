@@ -45,7 +45,7 @@ const GlobeViz = () => {
   }, []);
 
   return (
-    <div className="globe-container cursor-pointer h-full flex pl-96 pt-12 overflow-x-hidden overflow-y-visible ">
+    <div className="globe-container pointer-events-none cursor-pointer h-full flex pl-96 pt-12 overflow-x-hidden overflow-y-visible ">
       <div id="globeViz"></div>
     </div>
   );

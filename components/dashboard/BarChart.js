@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
+// import ReactApexChart from 'react-apexcharts';
+import dynamic from 'next/dynamic';
+const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const ApexChart = () => {
   const height = 200;
@@ -80,7 +82,7 @@ const ApexChart = () => {
   return (
     <div>
       <div id="chart">
-        <ReactApexChart options={chartData.options} series={chartData.series} type="bar" height={height} />
+        <ReactApexChart options={chartData.options} series={chartData.series} type="bar" height={height} width={'100%'} />
       </div>
       <div id="html-dist"></div>
     </div>
