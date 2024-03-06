@@ -1,22 +1,12 @@
 "use client";
-import { faCross, faFile, faXmark } from '@fortawesome/free-solid-svg-icons';
-import React, { useEffect, useState } from 'react';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import { faFile } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 import { Tooltip } from "@nextui-org/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { FaFilePdf } from 'react-icons/fa';
-import Clock from 'react-live-clock'; // Import Clock component
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 
 const Payments = ({ data }) => {
-  const [invoice, setInvoice] = useState(false);
-
-  // Render PDF invoice
-  const renderInvoice = () => {
-    setInvoice(true);
-  };
-
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div className='h-screen flex flex-col bg-sideBarcol rounded-xl z-0'>
       <div className='text-white text-2xl font-bold p-4'>Rechnungen</div>
@@ -67,7 +57,7 @@ const Payments = ({ data }) => {
             </div>
 
             <Tooltip content="See receipt" className='text-white w-20 rounded-lg p-2 bg-[#0075ff] text-xs cursor-pointer'>
-              <button className='flex gap-2' onClick={renderInvoice}>
+              <button className='flex gap-2' onClick={onOpen}>
                 <FontAwesomeIcon icon={faFile} />
                 <div className='font-light text-sm'>PDF</div>
               </button>
@@ -75,10 +65,36 @@ const Payments = ({ data }) => {
           </div>
         ))}
       </div>
-      {invoice && <Invoice />}
+
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalContent>
+          <ModalHeader className="flex flex-col gap-1">Invoice</ModalHeader>
+          <ModalBody>
+  <div className='flex w-full h-auto flex-col flex-wrap'>
+    {data1.map((value, index) => (
+      <div className='flex w-full text-xl gap-2' key={index}>
+        <div className=' font-semibold'>{value.iteam}</div>
+        <div className='flex w-full justify-end font-bold'><p></p>{value.cost}$</div>
+      </div>
+    ))}
+  </div>
+</ModalBody>
+
+          <ModalFooter>
+            <Button color="danger" variant="light" onClick={onClose}>
+              Close
+            </Button>
+            <Button color="primary" onClick={onClose}>
+              Print
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </div>
   );
 };
+
 
 const data = [
   { pic: "/PaymentPage/customer_1.png", tabelNo: "2", paymentMethod: "Master Card", status: "Bezahlt" ,cardNo:"12231xxx",date:"14.06.23  / 14:32 " },
@@ -100,72 +116,12 @@ const HomePage = () => {
 export default HomePage;
 
 
+const data1=[
+  {iteam:"pizza",cost:12},
+  {iteam:"cake",cost:21},
+  {iteam:"burger",cost:26},
+  {iteam:"Pulao",cost:1000},
+  {iteam:"Shwarma",cost:100},
 
+]
 
-
-const Invoice = () => {
-  const items = [
-    { name: 'Item 1', price: 25.99 },
-    { name: 'Item 2', price: 19.99 },
-    { name: 'Item 3', price: 15.49 },
-  ];
-
-  const calculateTotal = () => {
-    return items.reduce((total, item) => total + item.price, 0);
-  };
-
-  const downloadPDF = async () => {
-    const invoiceContainer = document.getElementById('invoiceContainer');
-
-    try {
-      const canvas = await html2canvas(invoiceContainer);
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF();
-      
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      
-      pdf.save('invoice.pdf');
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-    }
-  };
-
-  return (
-    <div className='absolute top-2 left-[50%] translate-x-[-50%] w-[20rem] bg-gray-200 p-6 text-black text-2xl' id="invoiceContainer">
-      <div className='absolute right-8 text-[red]'><FontAwesomeIcon icon={faXmark}/></div>
-      <div className="bg-white p-6 shadow-lg rounded-lg">
-        <div className="mb-4">
-          <h2 className="text-3xl font-bold mb-4">Invoice</h2>
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold">Items</h3>
-            <ul>
-              {items.map((item, index) => (
-                <li key={index} className="flex justify-between items-center mb-2">
-                  <span>{item.name}</span>
-                  <span>${item.price.toFixed(2)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="flex justify-between items-center">
-            <span className="text-xl font-semibold">Total:</span>
-            <span className="text-xl">${calculateTotal().toFixed(2)}</span>
-          </div>
-        </div>
-        <div className="mt-8 flex justify-end">
-          <button
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center"
-            onClick={downloadPDF}
-          >
-            <FaFilePdf className="mr-2" />
-            Download PDF
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// export default Invoice;
