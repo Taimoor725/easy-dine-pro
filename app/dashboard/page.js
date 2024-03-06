@@ -26,8 +26,8 @@ const Dashboard = () => {
                     <div className="flex flex-col gap-1">
                       <div className="font-bold text-white text-sm">Active Users</div>
                       <div className="flex font-semibold gap-2">
-                        <p className="text-green">{"(+23)"}</p>
-                        <p className="text-[#A0AEC0]">then last hour</p>
+                        <div className="text-green">{"(+23)"}</div>
+                        <div className="text-[#A0AEC0]">then last hour</div>
                       </div>
                     </div>
                     <div className="w-full flex gap-6 justify-center items-center">
@@ -40,11 +40,11 @@ const Dashboard = () => {
                   </div>
                 </div>
                 <div className="w-[90%] h-auto bg-sideBarcol rounded-lg p-4 z-10 relative">
-                  <p className="text-lg font-semibold text-white">Sales Overview</p>
-                  <p className="flex text-sm gap-2">
-                    <p className="text-green">{"(+5) more"}</p>
-                    <p className="text-[#a0aec0]">in 2021</p>
-                  </p>
+                  <div className="text-lg font-semibold text-white">Sales Overview</div>
+                  <div className="flex text-sm gap-2">
+                    <div className="text-green">{"(+5) more"}</div>
+                    <div className="text-[#a0aec0]">in 2021</div>
+                  </div>
                   <AreaChart />
                 </div>
               </div>
@@ -67,9 +67,9 @@ const States = ({ icon, about, number, percent }) => {
         <div className="flex rounded-lg p-1 justify-center items-center bg-[#0075FF] text-white">
           <FontAwesomeIcon icon={icon} />
         </div>
-        <p className="text-[#A0AEC0] font-semibold text-sm">{about}</p>
+        <div className="text-[#A0AEC0] font-semibold text-sm">{about}</div>
       </div>
-      <p className="font-bold text-white text-sm">{number}</p>
+      <div className="font-bold text-white text-sm">{number}</div>
       <div className="flex w-full h-[3px] bg-[#A0AEC0] items-center rounded-lg">
         <div className={`bg-[#0075FF] rounded-lg w-[${percent}%] h-[3px]`}></div>
       </div>
