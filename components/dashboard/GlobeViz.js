@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect } from 'react';
 import * as THREE from 'three';
-import Globe from 'globe.gl';
+import dynamic from 'next/dynamic'
+const Globe = dynamic(() => import('globe.gl'), { ssr: false });
 import * as topojson from 'topojson-client';
 
 const GlobeViz = () => {
