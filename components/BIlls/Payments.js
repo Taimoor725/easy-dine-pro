@@ -11,7 +11,7 @@ const Payments = ({ data }) => {
     <div className='h-screen flex flex-col bg-sideBarcol rounded-xl z-0'>
       <div className='text-white text-2xl font-bold p-4'>Rechnungen</div>
       <div className='flex flex-col gap-1'>
-        <div className='flex w-full justify-end items-center gap-28 pr-32 text-white font-semibold text-sm'>
+        <div className='flex w-full justify-end items-center gap-28 pr-44 text-white font-semibold text-sm'>
           <div>Zahlungsmittel</div>
           <div>STATUS</div>
           <div>EMPLOYED</div>
