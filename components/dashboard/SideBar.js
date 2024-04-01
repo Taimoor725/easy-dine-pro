@@ -35,9 +35,9 @@ const Sidebar=({height})=>{
     return router.push("/editproduct/");
   };
 
-  const CRM=(key)=>{
-    key==="HOME2" ? router.push("/bill"):router.push("/dashboard/")
-  }
+  // const CRM=(key)=>{
+  //   key==="HOME2" ? router.push("/bill"):router.push("/dashboard/")
+  // }
 
   return (
     <div className="h-auto min-w-[16%] z-10">
@@ -62,6 +62,7 @@ const Sidebar=({height})=>{
           <TabButton name={"Dashboard"} icon={faHouse} list={{ HOME1: "DEFAULT" ,HOME2:"CRM" }} onClick={(key) => CRM(key)}/>
           <TabButton name={"Arbeit’s Space"} icon={faFile} onClick={home} />
           <TabButton name={"EasyDine"} icon={faWrench} onClick={editproduct} />
+          {/* <TabButton name={"Apps"} icon={faShoppingCart} onClick={()=>router.push("/Apps/")} list={{ _: "" ,_:"" }}/> */}
           <TabButton name={"Apps"} icon={faShoppingCart} list={{ HOME1: "Calender", HOME2: "Kontakte",HOME3:"Rechnungen", HOME4:"Produkte",HOME5:"Reservation",HOME6:"Lagersystem",HOME7:"Support",HOME8:"QR Code" }} onClick={(key) => HOMEhandler(key)} />
           <TabButton name={"Managment"} icon={faFile} />
           <TabButton name={"Authentication"} icon={faFileLines} list={{ AUTHEN1: "SignIn", AUTHEN2: "LogIn" }} onClick={(key) => authenticationPages(key)} />
