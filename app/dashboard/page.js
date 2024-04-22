@@ -13,7 +13,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="flex bg-backColor h-screen w-screen overflow-x-hidden">
-        <Sidebar height="h-[75rem]"/>
+        <Sidebar height="h-[190%]"/>
         <div className="flex flex-col flex-grow">
           <NavBar page={"Dashboard"} />
               <div className="px-10 text-white text-4xl font-bold bg">{name}</div>
@@ -48,7 +48,7 @@ const Dashboard = () => {
                   <AreaChart />
                 </div>
               </div>
-              <div className="w-full flex items-center gap-2  p-10">
+              <div className="w-full flex items-center gap-2  pl-10 py-5">
                 <div className="text-white font-light text-sm">Powered by</div>
                 <div className="w-24">
                   <img src="smatik_logo.png" alt="Smatik Logo" />

@@ -33,7 +33,7 @@ export default LoginSideBar
 const AddContent=({content})=>{
   return(
         <div className='flex items-start gap-2 w-4/5'>
-          <img src="/circle-check.svg" className='text-white w-[1rem] pt-1' />
+          <img src="/circle-check.svg" alt='loading' className='text-white w-[1rem] pt-1' />
           <div className='text-[12px]'>{content}</div>
         </div>
   )

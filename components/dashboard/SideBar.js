@@ -40,11 +40,11 @@ const Sidebar=({height})=>{
   // }
 
   return (
-    <div className="h-auto min-w-[16%] z-10">
+    <div className="h-full min-w-[16%] z-10">
       <div className={`w-full ${maxheight} bg-sideBarcol flex flex-col items-center text-white gap-4`}>
         <div className="flex flex-col items-center gap-5">
           <div className="w-32 h-24 object-cover">
-            <Image src="/png/pic_1.png" width={128} height={96} />
+            <Image src="/png/pic_1.png" alt="logo" width={128} height={96} />
           </div>
           <div className="w-4/5 h-[0.5px] bg-gray-400 rounded-sm"></div>
           <div className="font-bold text-sm">Kunden-Nr. 44156413</div>

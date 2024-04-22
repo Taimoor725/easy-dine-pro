@@ -18,7 +18,7 @@ function NavBar({ page,subpage }) {
       </div>
       <div className="flex flex-grow-1 items-center justify-center gap-6 text-gray-500">
         <div className="flex items-center justify-end gap-2 ">
-          <Image src={"/png/flag.png"}  height={42} width={42} className="border-gray-500 border rounded-xl  p-3 object-cover"/>
+          <Image src={"/png/flag.png"} alt="flag"  height={42} width={42} className="border-gray-500 border rounded-xl  p-3 object-cover"/>
           <form className="w-3/5 flex text-sm border border-gray-500 rounded-xl px-4  justify-center items-center gap-4 placeholder:text-gray-500">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
             <input
@@ -28,7 +28,7 @@ function NavBar({ page,subpage }) {
             />
           </form>
         </div>
-        <Image src="/elon.jpg" height={24} width={24} className="w-10 h-10 rounded-full border p-2 border-blue-400 object-cover" />
+        <Image src="/elon.jpg" alt="avtar" height={24} width={24} className="w-10 h-10 rounded-full border p-2 border-blue-400 object-cover" />
         <FontAwesomeIcon icon={faBell} />
         <FontAwesomeIcon icon={faGear} />
       </div>

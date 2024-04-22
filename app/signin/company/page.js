@@ -3,7 +3,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='flex w-screen h-screen bg-brLightBlue text-white '>
+    <div className='flex w-screen h-screen bg-backColor text-white '>
         <SideBar/>
         <div className=' flex flex-col w-[73%]   bg-black '>
             <div className='flex w-full justify-end p-4'>Abmelden</div>

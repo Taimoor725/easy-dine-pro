@@ -27,7 +27,7 @@ function main() {
     }
 
     return (
-    <div className='w-[95%] bg-sideBarcol rounded-md flex flex-col flex-wrap ml-10 gap-2 px-4'>
+    <div className='w-[95%] bg-sideBarcol rounded-md flex flex-col flex-wrap ml-10 gap-2 p-4'>
         <div className='flex flex-col'>
             <div className='font-bold text-xl text-white flex-wrap pt-2'>Apps</div>
             <div className='font-light text-sm text-gray-400 flex-wrap py-2'>apps in this page</div>

@@ -72,7 +72,7 @@ const PicPlace=({pic,projectno,resno,quality})=>{
 
     return(
         <div className='flex flex-col rounded-xl w-[21.5rem] h-[10rem] bg-black gap-3'>
-            <img src={pic} className='w-full h-full rounded-xl object-cover hover:scale-110 transition-transform'/>
+            <img src={pic} alt='loading' className='w-full h-full rounded-xl object-cover hover:scale-110 transition-transform'/>
             <div className='font-light'>{projectno}</div>
             <div className='font-bold'>{resno}</div>
             <div className='font-light w-[20rem] text-[0.8rem]'> {quality}</div>
