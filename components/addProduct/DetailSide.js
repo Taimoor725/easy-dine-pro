@@ -130,7 +130,7 @@ const Pricing=()=>{
 
 const Setting=()=>{
     return(
-        <div className='w-[30%] bg-[#090E2B] rounded-xl flex flex-col text-xs p-1 text-[gray] gap-1'>
+        <div className='w-[30%] bg-[#090E2B] rounded-xl flex flex-col text-xs p-2 text-[gray] gap-1'>
             <p>Settings</p>
             <div className='flex w-full items-center'><Switch defaultSelected size="sm"></Switch>Monthly product update</div>
             <div className='flex w-full items-center'><Switch defaultSelected size="sm"></Switch>Optinal Auswahl Pakete</div>

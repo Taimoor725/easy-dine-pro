@@ -25,7 +25,7 @@ function ProfileSide() {
       <div className='w-full bg-[#090E2B] flex flex-col gap-3 px-4 rounded-xl pt-1 pb-3'>
         <h1>Product Image</h1>
         <div className='w-full h-52 bg-white rounded-md relative'>
-          {image ? <img src={URL.createObjectURL(image)} className='w-full h-full object-cover'></img> : <img src="/addproduct/addImage.png" alt="Add Image" className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-16 h-16' />}
+          {image ? <img src={URL.createObjectURL(image)} className='w-full h-full object-cover'></img> : <img src="./addproduct/addImage.png" alt="Add Image" className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-16 h-16' />}
         </div>
         <div className='flex gap-3'>
           <Button color="primary" onPress={clickHandler}>
