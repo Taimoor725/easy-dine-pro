@@ -1,14 +1,15 @@
 "use client"
 import React, { useState } from 'react'
 import {Textarea,Switch} from "@nextui-org/react";
-import BasicDateTimePicker from '../Assets/MUI/BasicDateTimePicker';
-import MuiToggelSwitch from '../Assets/MUI/MuiToggelSwitch';
+import { productInfo } from './ProfileSide';
 
 function DetailSide() {
     return (
         <div className='w-[60%] flex flex-col gap-2'>
             <ProductInformation />
             <OverAllPricing/>
+            {JSON.stringify(productInfo)}
+            {/* {console.log(ProductInfo)} */}
         </div>
 
     )
@@ -18,14 +19,9 @@ export default DetailSide
 
 
 
-
-
-
-
-
-
 const ProductInformation = () => {
     const [selectedOption, setSelectedOption] = useState("");
+    const [productinfo,setproductinfo]=useState(ProductInfo)
 
     return (
             <div className='w-full bg-[#090E2B] rounded-xl flex flex-col p-4 gap-6'>

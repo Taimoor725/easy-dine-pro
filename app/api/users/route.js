@@ -1,4 +1,5 @@
-import { easydineDB } from "@/app/back-end/db"
+
+import { easydineDB } from "@/app/back-end/db";
 import { User } from "@/model/user";
 import {  NextResponse } from "next/server"
 easydineDB();

@@ -1,5 +1,8 @@
+import { easydineDB } from "@/app/back-end/db";
 import { Product } from "@/model/products";
 import { NextResponse } from "next/server";
+
+easydineDB();
 
 // Get all the Products
 export async function GET(request){
@@ -23,7 +26,6 @@ export async function GET(request){
 
 // Add the product
 export async function POST(request) {
-   
    
     try{
         const { name, price, productImgURL, discription, discount, category, quantity, Stock, userID } = await request.json();
