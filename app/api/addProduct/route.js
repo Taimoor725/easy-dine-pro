@@ -32,12 +32,11 @@ export async function POST(request) {
         const product = new Product({name, price, productImgURL, discription, discount, category, quantity, Stock, userID})
         const productAdded = await product.save();
         console.log(productAdded)
-        return NextResponse.json(productAdded)
+        return NextResponse.json(productAdded,{success:true})
     }
     catch(error){
         console.log(error);
-        return NextResponse.json({message:"Failed to add product",
-        success:false})
+        return NextResponse.json({message:"Failed to add product", success:false})
     }
 }
 
